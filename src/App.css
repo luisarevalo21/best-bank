@@ -1,0 +1,55 @@
+/*
+COLOR PALETTE
+
+BLACK: #000000
+
+WHITE: #FFFFFF
+LIGHT: #FDF7F4
+
+ORANGE: #FFD18C
+DARK ORANGE: #FFA724
+*/
+
+body,
+main,
+html {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 30vh; */
+}
+
+.navbar-img {
+  width: 230px;
+  margin: 2em 0;
+}
+nav {
+  background: #ffd18c;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+nav ul a {
+  margin-right: 1.2em;
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+}
+nav ul a:hover {
+  font-size: 1.6rem;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.activeClass {
+  text-decoration: underline;
+  font-weight: 600;
+}
