@@ -53,3 +53,6 @@ nav ul a:hover {
   text-decoration: underline;
   font-weight: 600;
 }
+
+@media (max-width: 480px) {
+}

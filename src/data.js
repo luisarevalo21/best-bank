@@ -52,3 +52,5 @@ const accounts = [
     spendings: [],
   },
 ];
+
+export default accounts;
