@@ -54,5 +54,23 @@ nav ul a:hover {
   font-weight: 600;
 }
 
+.home-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 0.5em 2em;
+  font-size: 1.2rem;
+  background: #ffffff;
+  color: #000;
+  border: 2px #ffa724 solid;
+  min-width: 200px;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
 @media (max-width: 480px) {
 }
