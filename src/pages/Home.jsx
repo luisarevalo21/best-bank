@@ -5,12 +5,11 @@ import accounts from "../data"
 const Home = () => {
   const [selectedAccount, setSelectedAccount] = useState(accounts[0])
   // so after a mulitple hour session, we finally found the way to render the widths of the divs dynamically. AI tried so many ways to make it happen and finally we were able to do it. I knew that using state might be helpful. And in the end it was. But so painful. We tried to create good widths array using .map. But it didn't work. Then AI suggested using the reducer. And FINALLY it worked. This was all brought on by a refactoring of code since last commit. BUT the cost was a few hours of trying to get the dynamic widths back.
-  const [divWidths, setDivWidths] = useState(widths)
-
   const widths = selectedAccount.spendings.reduce((acc, item, index) => {
     const width = index === 0 ? 100 : acc[index - 1] * 0.85
     return [...acc, width]
   }, [])
+  const [divWidths, setDivWidths] = useState(widths)
 
   console.log(divWidths)
   console.log(widths)

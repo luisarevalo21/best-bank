@@ -104,6 +104,7 @@ nav ul a:hover {
   font-weight: bold;
   height: 100px;
   border: 3px solid #ffa274;
+  cursor: pointer;
 }
 
 .spendings-div > div {
