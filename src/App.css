@@ -54,5 +54,76 @@ nav ul a:hover {
   font-weight: 600;
 }
 
+/* home body */
+
+.pay-transfer-div {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+.pay-transfer-div > a {
+  color: black;
+  text-decoration: none;
+  padding: 0.5em 3em;
+  border: 3px solid #ffa274;
+  font-weight: bold;
+  border-radius: 50px;
+}
+/* Just to make same size */
+.pay-transfer-div a.pay-link {
+  padding: 0.5em 4em;
+}
+.pay-transfer-div > a:hover {
+  background-color: #ffd18c;
+}
+
+/* accounts-spending */
+.accounts-spending-div {
+  margin: 1em auto;
+  width: 85%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+
+.accounts-div,
+.spendings-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accounts-div > div {
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  font-weight: bold;
+  height: 100px;
+  border: 3px solid #ffa274;
+}
+.spendings-div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* some really nested ones - on the spending side, we needed to dynamically create a div for the main account spendings and the expenses spendings -  */
+.spendings-div > div > div {
+  background-color: #ffd18c;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  padding: 0 1em;
+  font-weight: bold;
+}
+.spendings-div > .expenses-account-div {
+  display: none;
+}
+
 @media (max-width: 480px) {
 }

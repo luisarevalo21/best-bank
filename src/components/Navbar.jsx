@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom"
 
-import logo from "../assets/bestbank_logo.png";
+import logo from "../assets/bestbank_logo.png"
 const Navbar = () => {
   return (
     <>
@@ -11,26 +11,41 @@ const Navbar = () => {
 
         <nav>
           <ul>
-            <NavLink className={({ isActive }) => (isActive ? "activeClass" : "")} to="/">
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeClass" : "")}
+              to="/"
+            >
               Home
             </NavLink>
-            <NavLink className={({ isActive }) => (isActive ? "activeClass" : "")} to="/payments">
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeClass" : "")}
+              to="/payments"
+            >
               Payments
             </NavLink>
-            <NavLink className={({ isActive }) => (isActive ? "activeClass" : "")} to="/savings">
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeClass" : "")}
+              to="/savings"
+            >
               Savings
             </NavLink>
-            <NavLink className={({ isActive }) => (isActive ? "activeClass" : "")} to="/financing">
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeClass" : "")}
+              to="/financing"
+            >
               Financing
             </NavLink>
-            <NavLink className={({ isActive }) => (isActive ? "activeClass" : "")} to="/stocks">
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeClass" : "")}
+              to="/stocks"
+            >
               Stocks
             </NavLink>
           </ul>
         </nav>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
