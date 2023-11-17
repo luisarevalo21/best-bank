@@ -1,10 +1,12 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import accounts from "../data"
+import Account from "../components/Account.jsx"
+import Spending from "../components/Spending.jsx"
 
 const Home = () => {
   const [selectedAccount, setSelectedAccount] = useState(accounts[0])
-  // so after a mulitple hour session, we finally found the way to render the widths of the divs dynamically. AI tried so many ways to make it happen and finally we were able to do it. I knew that using state might be helpful. And in the end it was. But so painful. We tried to create good widths array using .map. But it didn't work. Then AI suggested using the reducer. And FINALLY it worked. This was all brought on by a refactoring of code since last commit. BUT the cost was a few hours of trying to get the dynamic widths back.
+  // working with AI on the issue of dynamically styling the widths of our divs in the spending section. Definitely attempted more simplistic approaches that didn't achieve the desired result. So we create a divState
   const widths = selectedAccount.spendings.reduce((acc, item, index) => {
     const width = index === 0 ? 100 : acc[index - 1] * 0.85
     return [...acc, width]
@@ -28,42 +30,21 @@ const Home = () => {
       <div className="accounts-spending-div">
         <div className="accounts-div">
           <h2>Accounts</h2>
-          {accounts.map((account) => {
-            const { title, balance, id } = account
-            const accountTitle = title.split(" ")[0].toLowerCase()
-            // Dynamically set the class name based on whether it's the selected account
-            const isSelected = account === selectedAccount
-            return (
-              <div
-                className={`account-div ${isSelected ? "selected" : ""}`}
-                key={id}
-                onClick={() => handleAccountClick(account)}
-              >
-                <span>{title}</span>
-                <span>$ {balance}</span>
-              </div>
-            )
-          })}
+          {accounts.map((account) => (
+            <Account
+              key={account.id}
+              {...account}
+              isSelected={account === selectedAccount}
+              onClick={() => handleAccountClick(account)}
+            />
+          ))}
         </div>
         <div className="spendings-div">
           <h2>Spendings</h2>
 
-          {selectedAccount.spendings.map((item, index) => {
-            console.log(index)
-            const { category, spent } = item
-            const divCategory = category.toLowerCase()
-
-            return (
-              <div
-                className={`${divCategory}-div`}
-                key={category}
-                style={{ width: `${divWidths[index]}%` }}
-              >
-                <span>{category}</span>
-                <span>${spent}</span>
-              </div>
-            )
-          })}
+          {selectedAccount.spendings.map((item, index) => (
+            <Spending key={item.category} {...item} width={divWidths[index]} />
+          ))}
         </div>
       </div>
     </>
