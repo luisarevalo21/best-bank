@@ -26,7 +26,6 @@ export async function fetchStockData() {
   // const obj = {
   //   adjusted: true,
   //   queryCount: 1,
-  //   request_id: "6a7e466379af0a71039d60cc78e72282",
   //   results: [
   //     {
   //       T: "AAPL",
@@ -71,7 +70,6 @@ export async function fetchStockData() {
   // }
 
   // const res = await fetch(
-  //   "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-11-13/2023-11-13?adjusted=true&sort=asc&limit=120&apiKey=D3a26QWq870tQOzIet7wPOcvLUeodPg9"
   // );
 
   // const data = await res.json();
@@ -79,13 +77,8 @@ export async function fetchStockData() {
 }
 
 const createStrings = list => {
-  return list.map(
-    stock => `https://api.polygon.io/v2/aggs/ticker/${stock}/prev?adjusted=true&apiKey=D3a26QWq870tQOzIet7wPOcvLUeodPg9`
-  );
+  return list.map(stock => `https://api.polygon.io/v2/aggs/ticker/${stock}/prev?adjusted=true&apiKey=${key}`);
 };
-
-// https://api.polygon.io/v2/aggs/ticker/AAPL/prev?adjusted=true&apiKey=D3a26QWq870tQOzIet7wPOcvLUeodPg9
-// TSLA
 
 //APPL
 //CSCO
