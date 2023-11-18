@@ -14,6 +14,7 @@ import Paper from "@mui/material/Paper";
 /// next have a catch incase an error occurs
 //if fetching to much occurs. add a messgaing saying wait 1 minute to fetch.
 
+//fetch two stocks instead of jsut one figure out to fetch using an array of fetches
 const Stocks = () => {
   const [stock, setStock] = useState([]);
   const [error, setError] = useState("");
@@ -41,6 +42,7 @@ const Stocks = () => {
   ));
 
   //
+  console.log("STOCK", stock);
   return (
     <div>
       <h3>Notable stocks for : insert data here </h3>
