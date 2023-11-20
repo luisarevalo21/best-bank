@@ -1,6 +1,6 @@
-const list = ["APPL", "AMZN"];
+const list = ["APPL", "AMZN"]
 
-import { key } from "../key";
+// import { key } from "../key";
 const stocks = [
   "AAPL",
   "MSFT",
@@ -27,31 +27,31 @@ const stocks = [
   "JNJ",
   "PG",
   "ORCL",
-];
+]
 
 //fetch both stocks isntead of one
 
 export async function fetchStockData() {
-  const stocks = createStrings();
+  const stocks = createStrings()
 
-  console.log("stocks inside fetch stock data", stocks);
-  const returnData = [];
+  console.log("stocks inside fetch stock data", stocks)
+  const returnData = []
   for (let stock of stocks) {
-    const res = await fetch(stock);
-    const data = await res.json();
+    const res = await fetch(stock)
+    const data = await res.json()
     if (!res.ok) {
       throw {
         message: data.message,
         statusText: res.statusText,
         status: res.status,
         error: data.error,
-      };
+      }
     }
 
-    returnData.push(...data.results);
+    returnData.push(...data.results)
   }
   // console.log(returnData);
-  return returnData;
+  return returnData
 
   // const stocks = createStrings(list);
   // const res = await fetch(`https://api.polygon.io/v2/aggs/ticker/AAPL/prev?adjusted=true&apiKey=${key}`);
@@ -112,19 +112,21 @@ export async function fetchStockData() {
 }
 
 const randomStocks = () => {
-  return stocks[Math.floor(Math.random() * stocks.length)];
-};
+  return stocks[Math.floor(Math.random() * stocks.length)]
+}
 const createStrings = () => {
-  const stocks = [];
+  const stocks = []
 
   for (let i = 0; i < 2; i++) {
-    const stockName = randomStocks();
-    stocks.push(`https://api.polygon.io/v2/aggs/ticker/${stockName}/prev?adjusted=true&apiKey=${key}`);
+    const stockName = randomStocks()
+    stocks.push(
+      `https://api.polygon.io/v2/aggs/ticker/${stockName}/prev?adjusted=true&apiKey=${key}`
+    )
   }
-  return stocks;
+  return stocks
 
   // return list.map(stock => `https://api.polygon.io/v2/aggs/ticker/${stock}/prev?adjusted=true&apiKey=${key}`);
-};
+}
 
 //APPL
 //CSCO

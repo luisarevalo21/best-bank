@@ -198,3 +198,32 @@ form input {
   margin: 0 auto;
   cursor: pointer;
 }
+
+/* payments page */
+.payment-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 2em;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.payment-item {
+  display: flex;
+  font-size: 2rem;
+  padding: 0.5em 1em;
+}
+.payment-item:nth-child(odd) {
+  background-color: #ffa274;
+}
+.payment-item:nth-child(even) {
+  background-color: #ffd18c;
+}
+
+.amount-div {
+  margin-left: auto;
+}
+.amount {
+  margin-right: auto;
+}
