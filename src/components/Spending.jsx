@@ -1,6 +1,4 @@
 const Spending = ({ category, spent, width, renderType, date }) => {
-  console.log(renderType)
-
   if (renderType === "home") {
     return (
       <div
@@ -14,11 +12,8 @@ const Spending = ({ category, spent, width, renderType, date }) => {
   } else if (renderType === "payments") {
     return (
       <div className="payment-item">
-        {/* Your existing JSX for rendering spending */}
         <span>{category}</span>
-        <div className="amount-div">
-          <span className="amount">${spent}</span>
-        </div>
+        <span className="amount">${spent}</span>
       </div>
     )
   }

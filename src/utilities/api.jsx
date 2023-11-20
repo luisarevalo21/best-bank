@@ -1,6 +1,6 @@
 const list = ["APPL", "AMZN"]
 
-// import { key } from "../key";
+import { key } from "../key"
 const stocks = [
   "AAPL",
   "MSFT",
