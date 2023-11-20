@@ -61,7 +61,9 @@ const createStrings = () => {
 
   for (let i = 0; i < 2; i++) {
     const stockName = randomStocks();
-    stocks.push(`https://api.polygon.io/v2/aggs/ticker/${stockName}/prev?adjusted=true&apiKey=${key}`);
+    stocks.push(
+      `https://api.polygon.io/v2/aggs/ticker/${stockName}/prev?adjusted=true&apiKey=${import.meta.env.VITE_API_KEY}`
+    );
   }
   return stocks;
 };
