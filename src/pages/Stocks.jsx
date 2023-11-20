@@ -42,7 +42,7 @@ const Stocks = () => {
   ));
 
   //
-  console.log("STOCK", stock);
+  // console.log("STOCK", stock);
   return (
     <div>
       <h3>Notable stocks for : insert data here </h3>

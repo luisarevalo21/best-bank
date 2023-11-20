@@ -14,10 +14,7 @@ const Savings = () => {
   const [toggle, setToggle] = useState(false);
   const [amount, setAmount] = useState(0);
 
-  console.log(savings);
   const deposit = () => {
-    console.log("deposit called", typeof amount);
-
     if (amount > 0) {
       setSavings(prev => ({
         ...prev,

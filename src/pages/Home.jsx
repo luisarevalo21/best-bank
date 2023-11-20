@@ -1,24 +1,24 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import accounts from "../data"
-import Account from "../components/Account.jsx"
-import Spending from "../components/Spending.jsx"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import accounts from "../data";
+import Account from "../components/Account.jsx";
+import Spending from "../components/Spending.jsx";
 
 const Home = () => {
-  const [selectedAccount, setSelectedAccount] = useState(accounts[0])
+  const [selectedAccount, setSelectedAccount] = useState(accounts[0]);
   // working with AI on the issue of dynamically styling the widths of our divs in the spending section. Definitely attempted more simplistic approaches that didn't achieve the desired result. So we create a divState
   const widths = selectedAccount.spendings.reduce((acc, item, index) => {
-    const width = index === 0 ? 100 : acc[index - 1] * 0.85
-    return [...acc, width]
-  }, [])
-  const [divWidths, setDivWidths] = useState(widths)
+    const width = index === 0 ? 100 : acc[index - 1] * 0.85;
+    return [...acc, width];
+  }, []);
+  const [divWidths, setDivWidths] = useState(widths);
 
-  console.log(divWidths)
-  console.log(widths)
+  // console.log(divWidths)
+  // console.log(widths)
 
-  const handleAccountClick = (account) => {
-    setSelectedAccount(account)
-  }
+  const handleAccountClick = account => {
+    setSelectedAccount(account);
+  };
   return (
     <>
       <div className="pay-transfer-div">
@@ -30,7 +30,7 @@ const Home = () => {
       <div className="accounts-spending-div">
         <div className="accounts-div">
           <h2>Accounts</h2>
-          {accounts.map((account) => (
+          {accounts.map(account => (
             <Account
               key={account.id}
               {...account}
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

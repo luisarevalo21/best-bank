@@ -1,16 +1,11 @@
 const Spending = ({ category, spent, width, renderType, date }) => {
-  console.log(renderType)
-
   if (renderType === "home") {
     return (
-      <div
-        className={`${category.toLowerCase()}-div`}
-        style={{ width: `${width}%` }}
-      >
+      <div className={`${category.toLowerCase()}-div`} style={{ width: `${width}%` }}>
         <span>{category}</span>
         <span>${spent}</span>
       </div>
-    )
+    );
   } else if (renderType === "payments") {
     return (
       <div className="payment-item">
@@ -20,8 +15,8 @@ const Spending = ({ category, spent, width, renderType, date }) => {
           <span className="amount">${spent}</span>
         </div>
       </div>
-    )
+    );
   }
-}
+};
 
-export default Spending
+export default Spending;
