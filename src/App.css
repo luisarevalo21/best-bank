@@ -209,10 +209,15 @@ form input {
   margin-bottom: 20px;
 }
 
-.payment-item {
+.payment-item,
+.total-div {
   display: flex;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5em 1em;
+  justify-content: space-between;
+}
+.total-div {
+  background-color: #baa974;
 }
 .payment-item:nth-child(odd) {
   background-color: #ffa274;
@@ -220,10 +225,10 @@ form input {
 .payment-item:nth-child(even) {
   background-color: #ffd18c;
 }
-
-.amount-div {
-  margin-left: auto;
+.amount,
+.total-amount-span {
+  width: 100px;
 }
-.amount {
-  margin-right: auto;
+.total-amount-span {
+  font-weight: bold;
 }

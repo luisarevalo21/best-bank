@@ -51,11 +51,36 @@ const Payments = () => {
     const dayOfMonth = new Date(date).getDate()
     return dayOfMonth === 1 ? "payment-1st" : "payment-15th"
   }
+  // Function to calculate the total for bills due on a specific day
+  const calculateTotalForDay = (day) => {
+    const filteredEntries = Object.entries(groupedSpendings).filter(
+      ([date]) => {
+        const dayOfMonth = new Date(date).getDate()
+        return dayOfMonth === parseInt(day, 10)
+      }
+    )
+
+    console.log("Filtered Entries:", filteredEntries)
+
+    const total = filteredEntries.reduce((acc, [, spendings]) => {
+      return (
+        acc +
+        spendings.reduce(
+          (sum, spendingItem) => sum + parseFloat(spendingItem.spent),
+          0
+        )
+      )
+    }, 0)
+
+    console.log("Total:", total)
+
+    return total
+  }
 
   return (
     <div>
       {/* Render spendings based on groupedSpendings */}
-      {Object.entries(groupedSpendings).map(([date, spendings], index) => ( 
+      {Object.entries(groupedSpendings).map(([date, spendings], index) => (
         <div key={date} className={`payment-group ${getDateClass(date)}`}>
           <h3>{date}</h3>
           {spendings.map((spendingItem) => (
@@ -67,6 +92,26 @@ const Payments = () => {
               date={spendingItem.date}
             />
           ))}
+          {/* Display total for 1st at the end of the div if it's the 1st */}
+          {/* Display total for 1st at the end of the div if it's the 1st */}
+          {date.includes("1") && !date.includes("15") && (
+            <div className="total-div">
+              <span>Total: </span>
+              <span className="total-amount-span">
+                ${calculateTotalForDay("1")}
+              </span>
+            </div>
+          )}
+
+          {/* Display total for 15th at the end of the div if it's the 15th */}
+          {date.includes("15") && date.includes("1") && (
+            <div className="total-div">
+              <span>Total: </span>
+              <span className="total-amount-span">
+                ${calculateTotalForDay("15")}
+              </span>
+            </div>
+          )}
         </div>
       ))}
     </div>
