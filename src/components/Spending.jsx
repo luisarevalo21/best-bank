@@ -1,4 +1,5 @@
 const Spending = ({ category, spent, width, renderType, date }) => {
+  console.log(width)
   if (renderType === "home") {
     return (
       <div

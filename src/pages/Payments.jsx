@@ -93,7 +93,7 @@ const Payments = () => {
             />
           ))}
           {/* Display total for 1st at the end of the div if it's the 1st */}
-          {/* Display total for 1st at the end of the div if it's the 1st */}
+
           {date.includes("1") && !date.includes("15") && (
             <div className="total-div">
               <span>Total: </span>

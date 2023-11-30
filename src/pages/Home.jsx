@@ -13,9 +13,6 @@ const Home = () => {
   }, [])
   const [divWidths, setDivWidths] = useState(widths)
 
-  console.log(divWidths)
-  console.log(widths)
-
   const handleAccountClick = (account) => {
     setSelectedAccount(account)
   }
@@ -41,13 +38,13 @@ const Home = () => {
         </div>
         <div className="spendings-div">
           <h2>Spendings</h2>
-
           {selectedAccount.spendings.map((item, index) => (
             <Spending
               key={item.category}
               {...item}
               index={index} // Pass index to Spending component and use it to create dynamic dates for payments
               renderType="home"
+              width={divWidths[index]}
             />
           ))}
         </div>
